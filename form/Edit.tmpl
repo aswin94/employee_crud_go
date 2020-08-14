@@ -1,14 +1,36 @@
 {{ define "Edit" }}
   {{ template "Header" }}
     {{ template "Menu" }} 
-   <h2>Edit Employee ID: {{.ID}}</h2>  
-    <form method="POST" action="update">
-        <input type="hidden" name="uid" value="{{ .ID }}" />
-        <label> Name </label><input type="text" name="name" value="{{ .Name }}"  /><br />
-        <label> Email </label><input type="text" name="email" value="{{ .Email }}"  /><br />
-        <label> Education </label><input type="text" name="education" value="{{ .Education }}"  /><br />
-        <label> Experience </label><input type="text" name="experience" value="{{ .Experience }}"  /><br />
-        <input type="submit" value="Save Employee" />
-    </form><br />    
+    <div class="container">
+        <h3>Edit Employee ID: {{.ID}}</h3>  
+        <form method="POST" action="update">
+            <input type="hidden" name="uid" value="{{ .ID }}" />
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" id="name" value="{{ .Name }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                <input type="text" name="email" class="form-control" id="email" value="{{ .Email }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="education" class="col-sm-2 col-form-label">Education</label>
+                <div class="col-sm-10">
+                <input type="text" name="education" class="form-control" id="education" value="{{ .Education }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="experience" class="col-sm-2 col-form-label">Experience</label>
+                <div class="col-sm-10">
+                <input type="text" name="experience" class="form-control" id="experience" value="{{ .Experience }}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Save Employee</button>
+        </form>
+    </div>   
   {{ template "Footer" }}
 {{ end }}

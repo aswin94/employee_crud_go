@@ -123,7 +123,6 @@ func Insert(w http.ResponseWriter, r *http.Request) {
 			panic(err.Error())
 		}
 		insForm.Exec(name, email, education, experience)
-		log.Println("INSERT: Name: " + name + " | Email: " + email)
 	}
 	defer db.Close()
 	http.Redirect(w, r, "/", 301)
@@ -142,7 +141,6 @@ func Update(w http.ResponseWriter, r *http.Request) {
 			panic(err.Error())
 		}
 		insForm.Exec(name, email, education, experience, id)
-		log.Println("UPDATE: Name: " + name + " | Email: " + email)
 	}
 	defer db.Close()
 	http.Redirect(w, r, "/", 301)
@@ -156,7 +154,6 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 		panic(err.Error())
 	}
 	delForm.Exec(emp)
-	log.Println("DELETE")
 	defer db.Close()
 	http.Redirect(w, r, "/", 301)
 }

@@ -1,34 +1,36 @@
 {{ define "Index" }}
   {{ template "Header" }}
     {{ template "Menu"  }}
-    <h2> Employee List </h2>
-    <table border="1">
-      <thead>
-      <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Education</td>
-        <td>Experience</td>
-        <td>View</td>
-        <td>Edit</td>
-        <td>Delete</td>
-      </tr>
-       </thead>
-       <tbody>
-    {{ range . }}
-      <tr>
-        <td>{{ .ID }}</td>
-        <td> {{ .Name }} </td>
-        <td>{{ .Email }} </td> 
-        <td>{{ .Education }} </td> 
-        <td>{{ .Experience }} </td> 
-        <td><a href="/show?id={{ .ID }}">View</a></td>
-        <td><a href="/edit?id={{ .ID }}">Edit</a></td>
-        <td><a href="/delete?id={{ .ID }}">Delete</a><td>
-      </tr>
-    {{ end }}
-       </tbody>
-    </table>
+    <div class="container">
+        <h3> Employee List </h3>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</td>
+                <th scope="col">Name</td>
+                <th scope="col">Email</td>
+                <th scope="col">Education</td>
+                <th scope="col">Experience</td>
+                <th scope="col">View</td>
+                <th scope="col">Edit</td>
+                <th scope="col">Delete</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .ID }}</td>
+                <td> {{ .Name }} </td>
+                <td>{{ .Email }} </td> 
+                <td>{{ .Education }} </td> 
+                <td>{{ .Experience }} </td> 
+                <td><a href="/show?id={{ .ID }}">View</a></td>
+                <td><a href="/edit?id={{ .ID }}">Edit</a></td>
+                <td><a href="/delete?id={{ .ID }}">Delete</a><td>
+            </tr>
+            {{ end }}
+            </tbody>
+        </table>
+    </div>
   {{ template "Footer" }}
 {{ end }}

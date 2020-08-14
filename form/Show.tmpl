@@ -1,10 +1,14 @@
 {{ define "Show" }}
   {{ template "Header" }}
     {{ template "Menu"  }}
-    <h2> Details of ID: {{ .ID }} </h2>
-      <p>Name: {{ .Name }}</p>
-      <p>Email:  {{ .Email }}</p>
-      <p>Education:  {{ .Education }}</p>
-      <p>Experience:  {{ .Experience }}</p><br /> <a href="/edit?id={{ .ID }}">Edit</a></p>
+    <div class="container">
+        <div class="card w-50">
+            <div class="card-body">
+                <h5 class="card-title">Details of ID: {{ .ID }}</h5>
+                <p class="card-text">Name: {{ .Name }}<br/>Email:  {{ .Email }}<br/>Education:  {{ .Education }}<br/>Experience:  {{ .Experience }}</p>
+                <a href="/edit?id={{ .ID }}" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+    </div>
   {{ template "Footer" }}
 {{ end }}

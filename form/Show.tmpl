@@ -1,0 +1,10 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Details of ID: {{ .ID }} </h2>
+      <p>Name: {{ .Name }}</p>
+      <p>Email:  {{ .Email }}</p>
+      <p>Education:  {{ .Education }}</p>
+      <p>Experience:  {{ .Experience }}</p><br /> <a href="/edit?id={{ .ID }}">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}
